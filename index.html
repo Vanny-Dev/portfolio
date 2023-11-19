@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f494d44afc.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<style>
+
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background: black;
+        overflow-x: hidden;
+    }
+
+    nav {
+        background: linear-gradient(270deg, black, rgb(19, 19, 19));
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+    }
+
+    label.logo {
+        color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 50px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        float: right;
+        margin-right: 110px;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        font-size: 17px;
+        padding: 7px 25px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        transition: .5s;
+    }
+
+    a.active, a:hover {
+        background: #32CD32;     
+        box-shadow: 0 0 5px #32CD32;
+        transition: .5s;
+    }
+
+    .checkBtn {
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 20px;
+        cursor: pointer;
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }  
+
+    section {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        background: black;
+    }
+
+    #home {
+        background: black;
+    }
+
+    #about_me {
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #project {
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact {
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 4rem;
+    }
+
+    .container .myPic {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 15px solid #32CD32;
+        box-shadow: 5px 7px 25px #32CD32;
+    }
+
+    .myPic img {
+        height: 100%;
+        width: 100%;
+        transition: .5s;
+    }
+
+    .myPic img:hover {
+        transform: scale(1.2);
+    }
+
+    .wrapper {
+        width: 40vw;
+        margin: 0 9rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .greet {
+        background: linear-gradient(225deg, black, #32CD32, transparent);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    span {
+    color: white;
+    font-size: 2vw;
+    font-weight: 500;
+    letter-spacing: 1px;
+    }
+
+    .j {
+    color: #32CD32;
+    font-weight: bold;
+    }
+
+    .v {
+    color: #32CD32;
+    font-weight: bold;
+    }
+
+    .multiText {
+    font-weight: 800;
+    color: #32CD32;
+    text-transform: capitalize;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
+    }
+
+    @media (max-width: 1177px) {
+        label.logo {
+            font-size: 30px;
+            padding-left: 20px;
+            font-weight: bolder;
+        }
+
+        nav ul li a {
+            font-size: 16px;
+        }
+        .container {
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-left: 12rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            padding: 50px 0;
+        }
+    }
+
+    @media (max-width: 1075px) {
+        .checkBtn {
+            display: block;
+        }
+
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+        }
+
+        nav ul li {
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a:hover, a.active {
+            background: none;
+            color: #32CD32;
+        }
+
+        #check:checked ~ ul {
+            left: 0;
+        }
+    }
+
+    @media (max-width: 930px) {
+        .container {
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-left: 8.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            padding: 40px 0;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .container {
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-left: 5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            padding: 40px 0;
+        }
+    }
+
+    @media (max-width: 620px) {
+        .container {
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-left: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            padding: 40px 0;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .container {
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-left: .5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
+            padding: 40px 0;
+        }
+    }
+
+
+</style>
+
+<body>
+    
+    <nav id="myNav">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkBtn">
+            <i class="fa-solid fa-bars" style="color: white;"></i>
+        </label>
+        <label class="logo">Ctrl + Vanny</label>
+        <ul>
+            <li> <a class="btn active" href="#home">Home</a></li>
+            <li> <a class="btn" href="#about_me">About Me</a></li>
+            <li> <a class="btn" href="#project">Project</a></li>
+            <li> <a class="btn" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="wrapper">
+                <span class="greet" style="font-weight: bolder; font-size: 50px;">HELLO THERE!</span><br>
+                <span>I'm <span class="j">J</span>OVANNY 
+                <span class="j">D</span>E
+                <span class="j">L</span>EON,<br> 
+                A <span class="multiText"></span></span>
+            </div>
+            <div class="myPic">
+                <img src="me.jpg">
+            </div>
+        </div>
+    </section>
+    
+        <section id="about_me">
+            <h1>about me</h1>
+        </section>
+    
+        <section id="project">
+            <h1>project</h1>
+        </section>
+    
+        <section id="contact">
+            <h1>contact</h1>
+        </section>
+    </div>
+    
+
+        
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typingEffect = new Typed(".multiText", {
+            strings : ["coder", "web developer", "facebook chat developer", "discord bot developer"],
+            loop : true,
+            typeSpeed : 100,
+            backSpeed : 80,
+            startDelay : 1000,
+            backDelay : 1500
+        })
+        
+        // let typingSound = new Audio("0828.mp3")
+        // typingSound.loop = true;
+        // typingSound.play();
+
+        var navi = document.getElementById("myNav");
+        var buttons = navi.getElementsByClassName("btn");
+        var wrapper = document.querySelector(".wrapper");
+        var bars = document.getElementById("check");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active"
+            })
+        }
+
+        bars.addEventListener("click", function() {
+            if (wrapper.style.display === "none") {
+                wrapper.style.display = "block";
+            } 
+            else {
+                wrapper.style.display = "none";
+            }
+        });
+        
+    </script>
+</body>
+</html>
