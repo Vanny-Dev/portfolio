@@ -293,11 +293,11 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
     }
 }
 
-@media (max-width: 720px), (max-height: 720px) {
+@media (max-width: 720px), (max-height: 640px) {
 
     .container {
         position: absolute;
-        top: 50%;
+        top: 65%;
         left: 50%;
         transform: translate(-50%,-50%);
     }
@@ -320,7 +320,7 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
     }
 }
 
-@media (max-width: 520px), (max-height: 720px) {
+@media (max-width: 520px), (max-height: 640px) {
 
     label.logo {
         line-height: 70px;
@@ -337,12 +337,46 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
 
     .container {
         position: absolute;
-        top: 55%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%,-50%);
     }
 }
 
+.section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background: black;
+}
+
+#home {
+    background: black;
+}
+
+#about {
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#services {
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#project {
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact {
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -366,7 +400,7 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
         </ul>
     </nav>
 
-    <section id="home">
+    <div class="section" id="home">
         <div class="container ">
             <div class="wrapper">
                 <div class="myPic">
@@ -395,7 +429,23 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="section" id="about">
+        <h1>about</h1>
+    </div>
+
+    <div class="section" id="services">
+        <h1>services</h1>
+    </div>
+
+    <div class="section" id="project">
+        <h1>project</h1>
+    </div>
+
+    <div class="section" id="contact">
+        <h1>contact</h1>
+    </div>
 
 
 
