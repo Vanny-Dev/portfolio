@@ -33,6 +33,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 2;
+    height: 80px;
 }
 
 label.logo {
@@ -195,6 +196,11 @@ font-weight: 500;
 font-size: 25px;
 }
 
+.name {
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
 .j {
 color: #32CD32;
 font-weight: bold;
@@ -213,7 +219,17 @@ text-transform: capitalize;
 text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
 }
 
-@media (max-width: 1177px) {
+@media (max-width: 1529px), (max-height: 720px) {
+
+    .container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+}
+
+@media (max-width: 1177px), (max-height: 720px) {
     label.logo {
         font-size: 30px;
         padding-left: 20px;
@@ -222,6 +238,13 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
 
     nav ul li a {
         font-size: 16px;
+    }
+
+    .container {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 
@@ -261,13 +284,20 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
     #check:checked ~ ul {
         right: 0;
     }
-}
-
-@media (max-width: 720px) {
 
     .container {
         position: absolute;
         top: 65%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@media (max-width: 720px), (max-height: 720px) {
+
+    .container {
+        position: absolute;
+        top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
     }
@@ -289,6 +319,31 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
         font-size: 1rem;
     }
 }
+
+@media (max-width: 520px), (max-height: 720px) {
+
+    label.logo {
+        line-height: 70px;
+    }
+
+    .checkBtn {
+        line-height: 70px;
+        font-size: 25px;
+    }
+
+    nav {
+        height: 70px;
+    }
+
+    .container {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+
 
 
 </style>
@@ -321,11 +376,12 @@ text-shadow: 0 0 5px rgba(0, 255, 0, 0.918);
            
             <div class="board">
                 <div class="content">
-                    <br><p class="greet" style="font-weight: bold;">HELLO THERE!</p><br>
-                    <span>I'm <span class="j">J</span>OVANNY 
-                    <span class="j">D</span>E
-                    <span class="j">L</span>EON,<br> 
-                    A <span class="multiText"></span></span>
+                    <p class="greet" style="font-weight: bold;">
+                        HELLO THERE!
+                    </p><br>
+                    
+                    <p class="name"><span class="j">J</span>ovanny <span class="j">D</span>e <span class="j">L</span>eon</p>
+                    <span>A <span class="multiText"></span></span>
 
                     <div class="btn-dlcv">
                         <a href="#" class="dlcv">Download CV</a>
